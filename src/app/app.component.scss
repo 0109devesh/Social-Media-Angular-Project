@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  transition: all 0.3s;
+}
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 30px;
+  height: 50px;
+  background-color: #e65b00;
+  border-bottom: 1px solid #e38e54;
+}
+
+.logo-image {
+  object-fit: contain;
+  width: 173px;
+  position: fixed;
+  top: 2px;
+  left: 51px;
+}
+
+.navbar h2 {
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hamburger {
+  padding: 5px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.hamburger.active .two {
+  opacity: 0;
+}
+
+.hamburger.active .one {
+  transform: rotate(45deg);
+  top: 8px;
+  position: absolute;
+}
+
+.hamburger.active .three {
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 8px;
+}
+
+.line {
+  height: 3.2px;
+  margin: 3px 0;
+  width: 25px;
+  background-color: #fff;
+}
+
+.lists {
+  position: absolute;
+  background-color: #e65b00;
+  list-style: none;
+  padding: 30px 50px 20px 20px;
+  top: 50px;
+  left: -180px;
+  height: 100vh;
+  z-index: 200;
+}
+
+.lists li {
+  margin: 1px;
+  border-bottom: 1px solid #ffffff56;
+  width: 100%;
+}
+
+.lists li:hover {
+  transform: translateX(10px);
+}
+
+.lists.active {
+  left: 0;
+}
+
+.lists li a {
+  text-decoration: none;
+  color: #fff;
+  line-height: 40px;
+}
+
+.main-content {
+  display: grid;
+  height: 1000px;
+}
+
+.com {
+  display: flex;
+  padding-left: 147px;
+  padding-right: 20px;
+  overflow: auto;
+  max-height: 100%;
+}

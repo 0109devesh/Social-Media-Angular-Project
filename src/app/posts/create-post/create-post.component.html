@@ -1,0 +1,29 @@
+
+<mat-card class="example-card p-2 shadow m-2">
+    <mat-card-header>
+      <img mat-card-avatar src="https://placeimg.com/80/80/animals" alt="Dog" />
+      <h1 class="card-header-title">John </h1>
+     
+    </mat-card-header>
+  
+    <mat-divider></mat-divider>
+  
+    <div class="card-body p-2">
+      <div class="row">
+        <div class="col">
+          <textarea class="form-control" name="" id="" cols="80" rows="2"  [(ngModel)]="newPost.content"
+          name="content" placeholder="create your post ....."
+        required></textarea>
+        <div *ngIf="isInputBlank">
+            Content is required.
+          </div>
+        </div>
+        <div class="col-auto d-flex">
+          <div class="align-items-center mt-3 ">
+             <i class="bi bi-send-fill" style="color: blue; font-size: 30px;"  (click)="createPost()" ></i>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>

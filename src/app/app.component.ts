@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SocialMediaApp';
+
+  
+
+  toggleMenu() {
+    const lists = document.getElementById('lists');
+    const hamburger = document.getElementById('hamburger');
+    lists?.classList.toggle('active');
+    hamburger?.classList.toggle('active');
+  }
+
+  
+
+  
+
 }
