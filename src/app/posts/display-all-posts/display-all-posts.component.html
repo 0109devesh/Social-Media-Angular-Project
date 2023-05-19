@@ -6,7 +6,7 @@
   <mat-card-header>
     <img mat-card-avatar src="https://placeimg.com/80/80/animals" alt="Dog" />
     <h1 class="card-header-title">{{post.user?.username}}</h1>
-    <span class="card-header-time">{{post.createdAt }}</span>
+    <span class="card-header-time">{{post.createdAt | date:'MMM d, y h:mm a' }}</span>
   </mat-card-header>
 
   <mat-divider></mat-divider>
@@ -50,7 +50,7 @@
   <mat-card-header>
     <img mat-card-avatar src="https://placeimg.com/80/80/animals" alt="Dog" />
     <h1 class="card-header-title">John Doe</h1>
-    <span class="card-header-time">Yesterday at 3:23 PM</span>
+    <span class="card-header-time">May 15, 2023 11:09 PM</span>
   </mat-card-header>
 
   <mat-divider></mat-divider>
@@ -97,7 +97,7 @@
   <mat-card-header>
     <img mat-card-avatar src="https://placeimg.com/80/80/animals" alt="Dog" />
     <h1 class="card-header-title">John Doe</h1>
-    <span class="card-header-time">Yesterday at 3:23 PM</span>
+    <span class="card-header-time">May 15, 2023 11:09 PM</span>
   </mat-card-header>
 
   <mat-divider></mat-divider>

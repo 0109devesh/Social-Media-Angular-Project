@@ -1,1 +1,50 @@
-<p>register works!</p>
+<div class="container">
+    <div class="header">
+        <h2>Register Form</h2>
+    </div>
+    <div class="content">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+                <div class="form-column">
+                    <mat-form-field>
+                        <input matInput placeholder="Username" formControlName="username" />
+                        <mat-error *ngIf="isFieldInvalid('username') && registerForm.controls['username'].touched">
+                            Username is required.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-column">
+                    <mat-form-field>
+                        <input matInput placeholder="Email" formControlName="email" />
+                        <mat-error *ngIf="isFieldInvalid('email') && registerForm.controls['email'].touched">
+                            Email is required.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-column">
+                    <mat-form-field>
+                        <input matInput type="password" placeholder="Password" formControlName="password" />
+                        <mat-error *ngIf="isFieldInvalid('password') && registerForm.controls['password'].touched">
+                            Password is required.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-column">
+                    <mat-form-field>
+                        <input matInput type="password" placeholder="Confirm Password" formControlName="confirmPassword" />
+                        <mat-error *ngIf="isConfirmPasswordInvalid()">
+                            Confirm Password does not match.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-column">
+                    <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid || isConfirmPasswordInvalid()">Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

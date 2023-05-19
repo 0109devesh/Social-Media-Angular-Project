@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PostsService } from '../posts.service';
 import { UsersService } from 'src/app/users/users.service';
+import { User } from 'src/app/users/user.model';
 
 
 @Component({
@@ -12,7 +13,39 @@ export class CreatePostComponent {
   newPost: any = {};
   isInputBlank = false;
 
-  constructor(private postService: PostsService) { }
+  user!: User;
+  username: any;
+  userId!: number;
+
+  constructor(private postService: PostsService , private userService : UsersService) { }
+
+  ngOnInit() {
+    // Retrieve the userId from the URL
+    this.userId = parseInt(window.location.pathname.split('/')[2]);
+
+    this.getUserById();
+  
+  }
+
+ 
+
+  getUserById() {
+    this.userService.getUserById(this.userId).subscribe(
+      (response: any) => {
+
+          this.user = response;
+
+        this.username = this.user.username;
+
+        console.log(this.user.username);
+
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
 
 
   createPost() {

@@ -36,6 +36,8 @@ export class LoginComponent {
       },
       (error) => {
         console.log('Login failed', error);
+        window.location.reload();
+        alert('Please Sign Up Now ...');
       }
     );
   }
